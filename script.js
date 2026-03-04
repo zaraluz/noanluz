@@ -1,20 +1,40 @@
+const video = document.getElementById("bgVideo");
 const music = document.getElementById("music");
 const playBtn = document.getElementById("playMusic");
 
-// iPhone: destrava áudio no primeiro toque em qualquer lugar
-function unlockOnce(){
-  music.play().then(()=>music.pause()).catch(()=>{});
-  window.removeEventListener("touchstart", unlockOnce);
-  window.removeEventListener("click", unlockOnce);
+// tenta dar play no vídeo
+async function ensureVideoPlaying() {
+  try {
+    video.muted = true;        // essencial
+    video.playsInline = true;  // essencial iPhone
+    await video.play();
+  } catch (e) {
+    // se bloquear, a gente tenta novamente no primeiro toque do usuário
+  }
 }
-window.addEventListener("touchstart", unlockOnce, { once:true });
-window.addEventListener("click", unlockOnce, { once:true });
 
-playBtn.addEventListener("click", async () => {
-  try{
+// tenta assim que carregar
+document.addEventListener("DOMContentLoaded", ensureVideoPlaying);
+window.addEventListener("pageshow", ensureVideoPlaying);
+
+// no primeiro toque, força o vídeo iniciar (mata o play nativo)
+function firstTouchStart() {
+  ensureVideoPlaying();
+  // também “desbloqueia” áudio no iPhone
+  music.play().then(() => music.pause()).catch(() => {});
+  window.removeEventListener("touchstart", firstTouchStart);
+  window.removeEventListener("click", firstTouchStart);
+}
+window.addEventListener("touchstart", firstTouchStart, { once: true });
+window.addEventListener("click", firstTouchStart, { once: true });
+
+// botão de música
+playBtn.addEventListener("click", async (e) => {
+  e.preventDefault();
+  try {
     music.currentTime = 0;
     await music.play();
-  }catch(e){
+  } catch (err) {
     alert("Toca na tela uma vez e tenta de novo 🙂");
   }
 });
