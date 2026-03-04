@@ -4,6 +4,7 @@ const openBtn = document.getElementById('openInvite');
 const details = document.getElementById('details');
 
 function startMusic(){
+  // Autoplay só funciona após clique — aqui é clique
   music.play().catch(() => {});
 }
 
