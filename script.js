@@ -1,40 +1,29 @@
-const video = document.getElementById("bgVideo");
 const music = document.getElementById("music");
 const playBtn = document.getElementById("playMusic");
+const openBtn = document.getElementById("openInvite");
+const part2 = document.getElementById("part2");
 
-// tenta dar play no vídeo
-async function ensureVideoPlaying() {
-  try {
-    video.muted = true;        // essencial
-    video.playsInline = true;  // essencial iPhone
-    await video.play();
-  } catch (e) {
-    // se bloquear, a gente tenta novamente no primeiro toque do usuário
-  }
+// iPhone: destrava áudio no primeiro toque em qualquer lugar
+function unlockOnce(){
+  music.play().then(()=>music.pause()).catch(()=>{});
+  window.removeEventListener("touchstart", unlockOnce);
+  window.removeEventListener("click", unlockOnce);
 }
+window.addEventListener("touchstart", unlockOnce, { once:true });
+window.addEventListener("click", unlockOnce, { once:true });
 
-// tenta assim que carregar
-document.addEventListener("DOMContentLoaded", ensureVideoPlaying);
-window.addEventListener("pageshow", ensureVideoPlaying);
+// Abrir convite: rolar para tela 2
+openBtn?.addEventListener("click", () => {
+  part2.scrollIntoView({ behavior: "smooth" });
+});
 
-// no primeiro toque, força o vídeo iniciar (mata o play nativo)
-function firstTouchStart() {
-  ensureVideoPlaying();
-  // também “desbloqueia” áudio no iPhone
-  music.play().then(() => music.pause()).catch(() => {});
-  window.removeEventListener("touchstart", firstTouchStart);
-  window.removeEventListener("click", firstTouchStart);
-}
-window.addEventListener("touchstart", firstTouchStart, { once: true });
-window.addEventListener("click", firstTouchStart, { once: true });
-
-// botão de música
-playBtn.addEventListener("click", async (e) => {
+// Tocar música
+playBtn?.addEventListener("click", async (e) => {
   e.preventDefault();
-  try {
+  try{
     music.currentTime = 0;
     await music.play();
-  } catch (err) {
+  }catch(err){
     alert("Toca na tela uma vez e tenta de novo 🙂");
   }
 });
