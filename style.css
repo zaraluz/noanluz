@@ -67,27 +67,27 @@ body { margin: 0; background: #000; }
   left: 35%;
   top: 41.5%;
   width: 30%;
-  height: 10%;
+  height: 8.5%;
   border-radius: 999px;
   background: rgba(0,255,0,0.3);
 }
 
 /* TELA 2: local (bola esquerda) */
 .local{
-  left: 11%;
-  top: 52%;
+  left: 10.5%;
+  top: 52.5%;
   width: 26%;
-  height: 10%;
+  height: 9.5%;
   border-radius: 999px;
   background: rgba(0,255,0,0.3);
 }
 
 /* TELA 2: confirmar (bola direita) */
 .confirm{
-  left: 62%;
-  top: 62%;
+  left: 63.5%;
+  top: 52.5%;
   width: 26%;
-  height: 10%;
+  height: 9.5%;
   border-radius: 999px;
   background: rgba(0,255,0,0.3);
 }
