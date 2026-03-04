@@ -64,20 +64,20 @@ body { margin: 0; background: #000; }
 
 /* TELA 2: play (círculo grande) */
 .play{
-  left: 33%;
-  top: 55%;
-  width: 34%;
-  height: 16%;
+  left: 28%;
+  top: 50%;
+  width: 44%;
+  height: 12%;
   border-radius: 999px;
   background: rgba(0,255,0,0.3);
 }
 
 /* TELA 2: local (bola esquerda) */
 .local{
-  left: 9%;
-  top: 50%;
+  left: 16%;
+  top: 86%;
   width: 32%;
-  height: 11%;
+  height: 13%;
   border-radius: 999px;
   background: rgba(0,255,0,0.3);
 }
@@ -85,7 +85,7 @@ body { margin: 0; background: #000; }
 /* TELA 2: confirmar (bola direita) */
 .confirm{
   left: 56%;
-  top: 84%;
+  top: 80%;
   width: 32%;
   height: 13%;
   border-radius: 999px;
