@@ -1,7 +1,7 @@
 *{ box-sizing:border-box; }
 body{ margin:0; background:#000; }
 
-/* vídeo full screen no fundo */
+/* Vídeo tela toda */
 .bg-video{
   position: fixed;
   inset: 0;
@@ -9,75 +9,50 @@ body{ margin:0; background:#000; }
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  pointer-events: none; /* não atrapalha cliques */
+
+  /* ESSENCIAL: deixa os cliques passarem pros hotspots */
+  pointer-events: none;
 }
 
-/* container com “cara de mobile” */
-.wrap{
-  position: relative;
-  z-index: 1;
-  max-width: 480px;
-  margin: 0 auto;
+/* Camada por cima do vídeo */
+.hotspots{
+  position: fixed;
+  inset: 0;
+  z-index: 10;
 }
 
-.screen{ position: relative; width: 100%; }
-
-/* tela 1 ocupa a altura do celular */
-.hero{
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* imagens do layout */
-.layout{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display:block;
-}
-
-/* hotspots invisíveis (links/botões) */
+/* Botões invisíveis */
 .hotspot{
-  position:absolute;
-  background: transparent;
-  border: none;
-  display:block;
-  cursor:pointer;
-  z-index: 5;
+  position: absolute;
+  background: rgba(255,255,255,0); /* invisível */
+  border: 0;
+  cursor: pointer;
+  display: block;
 }
 
-/* Ajuste estes 4 blocos para encaixar nos seus botões */
-
-/* Envelope (tela 1) */
-.envelope{
-  left: 12%;
-  top: 40%;
-  width: 76%;
-  height: 22%;
-}
-
-/* Play (tela 1) */
+/* ====== AJUSTE AQUI ====== */
+/* Exemplo: botão play (círculo) */
 .play{
-  left: 38%;
-  top: 70%;
-  width: 24%;
+  left: 40%;
+  top: 68%;
+  width: 20%;
   height: 12%;
   border-radius: 999px;
 }
 
-/* Local (tela 2) */
+/* Exemplo: botão local (bola esquerda) */
 .local{
   left: 18%;
-  top: 78%;
+  top: 84%;
   width: 24%;
   height: 12%;
   border-radius: 999px;
 }
 
-/* Confirmar (tela 2) */
+/* Exemplo: botão confirmar (bola direita) */
 .confirm{
   left: 58%;
-  top: 78%;
+  top: 84%;
   width: 24%;
   height: 12%;
   border-radius: 999px;
