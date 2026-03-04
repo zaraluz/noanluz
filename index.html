@@ -8,47 +8,47 @@
 </head>
 <body>
 
-  <!-- Vídeo de fundo tela toda -->
+  <!-- Vídeo de fundo (tela toda) -->
   <video class="bg-video" autoplay loop muted playsinline>
-    <source src="assets/bg.mp4" type="video/mp4" />
+    <source src="Noan_1.mp4" type="video/mp4" />
   </video>
 
-  <!-- Camada do conteúdo (imagens + hotspots) -->
+  <!-- Conteúdo -->
   <main class="wrap">
 
     <!-- PARTE 1 (tela cheia) -->
     <section class="screen hero">
-      <img class="layout" src="assets/capa.png" alt="Convite - capa" />
+      <img class="layout" src="Noan_1.png" alt="Convite - capa" />
 
-      <!-- Clique no envelope (faz rolar) -->
+      <!-- Clique no envelope: rola para baixo -->
       <button class="hotspot envelope" id="openInvite" aria-label="Abrir convite"></button>
 
-      <!-- Botão play (toca música/áudio) -->
+      <!-- Botão play: toca música -->
       <button class="hotspot play" id="playMusic" aria-label="Tocar música"></button>
     </section>
 
-    <!-- PARTE 2 (rolável) -->
+    <!-- PARTE 2 -->
     <section class="screen content" id="details">
-      <img class="layout" src="assets/conteudo.png" alt="Convite - detalhes" />
+      <img class="layout" src="Noan_2.png" alt="Convite - detalhes" />
 
-      <!-- LOCAL (cobrindo a bola toda) -->
+      <!-- LOCAL -->
       <a class="hotspot local"
          href="https://www.instagram.com/tatubolafortaleza?igsh=OG5pY21leHZ3Zzhz"
          target="_blank" rel="noopener"
          aria-label="Abrir local no Instagram"></a>
 
-      <!-- CONFIRMAR -->
+      <!-- CONFIRMAR PRESENÇA -->
       <a class="hotspot confirm"
-         href="https://SEU-LINK-AQUI"
+         href="https://wa.me/5585996660017?text=Me%20confirma%20a%C3%AD%20macho%20v%C3%A9i"
          target="_blank" rel="noopener"
-         aria-label="Confirmar presença"></a>
+         aria-label="Confirmar presença no WhatsApp"></a>
     </section>
 
   </main>
 
-  <!-- Áudio (toca no clique) -->
+  <!-- Música (toca no clique) -->
   <audio id="music" preload="auto">
-    <source src="assets/musica.mp3" type="audio/mpeg" />
+    <source src="musica.mp3" type="audio/mpeg" />
   </audio>
 
   <script src="script.js"></script>
