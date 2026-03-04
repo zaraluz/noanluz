@@ -75,7 +75,7 @@ body { margin: 0; background: #000; }
 /* TELA 2: local (bola esquerda) */
 .local{
   left: 9%;
-  top: 58%;
+  top: 50%;
   width: 32%;
   height: 11%;
   border-radius: 999px;
