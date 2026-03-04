@@ -69,6 +69,7 @@ body { margin: 0; background: #000; }
   width: 34%;
   height: 16%;
   border-radius: 999px;
+  background: rgba(0,255,0,0.3);
 }
 
 /* TELA 2: local (bola esquerda) */
@@ -78,6 +79,7 @@ body { margin: 0; background: #000; }
   width: 32%;
   height: 13%;
   border-radius: 999px;
+  background: rgba(0,255,0,0.3);
 }
 
 /* TELA 2: confirmar (bola direita) */
