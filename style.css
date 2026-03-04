@@ -1,44 +1,59 @@
-*{ box-sizing:border-box; }
-body{ margin:0; background:#000; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #000; }
 
-/* 2 telas */
-.screen{
+/* Página 1: 1080x1920 = ocupa 100vh */
+#part1 {
   position: relative;
   height: 100vh;
   overflow: hidden;
 }
 
-/* PNG de fundo */
-.bg{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display:block;
+/* Página 2: 1080x3000 = altura proporcional ao width da tela */
+#part2 {
+  position: relative;
+  height: calc(100vw * 3000 / 1080);
+  min-height: 100vh;
+  overflow: hidden;
 }
 
-/* GIF por cima */
-.gif{
-  position:absolute;
+/* Fundo PNG */
+.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Página 1: pode “cover” */
+#part1 .bg { object-fit: cover; }
+
+/* Página 2: como é longa, queremos ver tudo (scroll vai mostrar) */
+#part2 .bg { object-fit: cover; }
+
+/* GIF por cima (sem fundo) */
+.gif {
+  position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 2;
-  pointer-events: none; /* não atrapalha clique */
+  pointer-events: none;
 }
 
 /* Hotspots */
-.hotspot{
-  position:absolute;
+.hotspot {
+  position: absolute;
   z-index: 5;
   background: rgba(255,255,255,0);
   border: 0;
   pointer-events: auto;
 }
 
-/* ========= AJUSTE FINO AQUI ========= */
+/* ========= POSIÇÕES (AJUSTE FINO) ========= */
 
-/* TELA 1: clique no envelope/cabeça (chute inicial bom) */
+/* TELA 1: clique na cabeça/envelope */
 .open{
   left: 22%;
   top: 28%;
@@ -47,29 +62,29 @@ body{ margin:0; background:#000; }
   border-radius: 30px;
 }
 
-/* TELA 2: botão play música (ajusta pra ficar em cima do botão do seu layout) */
+/* TELA 2: play (círculo grande) */
 .play{
-  left: 36%;
+  left: 33%;
   top: 55%;
-  width: 28%;
-  height: 14%;
+  width: 34%;
+  height: 16%;
   border-radius: 999px;
 }
 
 /* TELA 2: local (bola esquerda) */
 .local{
-  left: 16%;
-  top: 80%;
-  width: 28%;
-  height: 14%;
+  left: 12%;
+  top: 84%;
+  width: 32%;
+  height: 13%;
   border-radius: 999px;
 }
 
 /* TELA 2: confirmar (bola direita) */
 .confirm{
   left: 56%;
-  top: 80%;
-  width: 28%;
-  height: 14%;
+  top: 84%;
+  width: 32%;
+  height: 13%;
   border-radius: 999px;
 }
