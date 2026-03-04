@@ -1,59 +1,75 @@
 *{ box-sizing:border-box; }
 body{ margin:0; background:#000; }
 
-/* Vídeo tela toda */
-.bg-video{
-  position: fixed;
+/* 2 telas */
+.screen{
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* PNG de fundo */
+.bg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+
+/* GIF por cima */
+.gif{
+  position:absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
-
-  /* ESSENCIAL: deixa os cliques passarem pros hotspots */
-  pointer-events: none;
+  z-index: 2;
+  pointer-events: none; /* não atrapalha clique */
 }
 
-/* Camada por cima do vídeo */
-.hotspots{
-  position: fixed;
-  inset: 0;
-  z-index: 10;
-}
-
-/* Botões invisíveis */
+/* Hotspots */
 .hotspot{
-  position: absolute;
-  background: rgba(255,255,255,0); /* invisível */
+  position:absolute;
+  z-index: 5;
+  background: rgba(255,255,255,0);
   border: 0;
-  cursor: pointer;
-  display: block;
+  pointer-events: auto;
 }
 
-/* ====== AJUSTE AQUI ====== */
-/* Exemplo: botão play (círculo) */
+/* ========= AJUSTE FINO AQUI ========= */
+
+/* TELA 1: clique no envelope/cabeça (chute inicial bom) */
+.open{
+  left: 22%;
+  top: 28%;
+  width: 56%;
+  height: 44%;
+  border-radius: 30px;
+}
+
+/* TELA 2: botão play música (ajusta pra ficar em cima do botão do seu layout) */
 .play{
-  left: 37%;
-  top: 78%;
-  width: 26%;
+  left: 36%;
+  top: 55%;
+  width: 28%;
   height: 14%;
   border-radius: 999px;
 }
 
-/* Exemplo: botão local (bola esquerda) */
+/* TELA 2: local (bola esquerda) */
 .local{
-  left: 18%;
-  top: 84%;
-  width: 24%;
-  height: 12%;
+  left: 16%;
+  top: 80%;
+  width: 28%;
+  height: 14%;
   border-radius: 999px;
 }
 
-/* Exemplo: botão confirmar (bola direita) */
+/* TELA 2: confirmar (bola direita) */
 .confirm{
-  left: 58%;
-  top: 84%;
-  width: 24%;
-  height: 12%;
+  left: 56%;
+  top: 80%;
+  width: 28%;
+  height: 14%;
   border-radius: 999px;
 }
