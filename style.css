@@ -1,0 +1,78 @@
+*{ box-sizing:border-box; }
+body{ margin:0; background:#000; }
+
+.bg-video{
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* MP4 cobre a tela inteira */
+  z-index: 0;
+  pointer-events: none;  /* vídeo não pega clique */
+}
+
+.wrap{
+  position: relative;
+  z-index: 1;
+  max-width: 480px;      /* aparência “mobile” centralizada */
+  margin: 0 auto;
+}
+
+.screen{
+  position: relative;
+  width: 100%;
+}
+
+.hero{
+  height: 100vh;
+  overflow: hidden;
+}
+
+.layout{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+
+/* Hotspots (links/botões invisíveis) */
+.hotspot{
+  position:absolute;
+  background: transparent;
+  border: none;
+  display:block;
+  cursor:pointer;
+  z-index: 5;
+}
+
+/* Ajuste estas caixas no seu layout */
+.envelope{
+  left: 12%;
+  top: 40%;
+  width: 76%;
+  height: 22%;
+}
+
+.play{
+  left: 38%;
+  top: 70%;
+  width: 24%;
+  height: 12%;
+  border-radius: 999px;
+}
+
+.local{
+  left: 18%;
+  top: 78%;
+  width: 24%;
+  height: 12%;
+  border-radius: 999px;
+}
+
+.confirm{
+  left: 58%;
+  top: 78%;
+  width: 24%;
+  height: 12%;
+  border-radius: 999px;
+}
