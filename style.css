@@ -62,35 +62,32 @@ body { margin: 0; background: #000; }
   border-radius: 30px;
 }
 
-/* PLAY: posicionado pelo centro */
+/* TELA 2: play (círculo grande) */
 .play{
-  left: 50%;
-  top: 47%;
-  width: 22%;
-  aspect-ratio: 1 / 1;
-  transform: translate(-50%, -50%);
+  left: 38.4%;
+  top: 52.0%;
+  width: 32.0%;
+  height: 9.0%;
   border-radius: 999px;
   background: rgba(0,255,0,0.3);
 }
 
-/* LOCAL: posicionado pelo centro */
+/* TELA 2: local (bola esquerda) */
 .local{
-  left: 23%;
-  top: 57%;
-  width: 26%;
-  aspect-ratio: 1 / 1;
-  transform: translate(-50%, -50%);
+  left: 6.1%;
+  top: 66.0%;
+  width: 41.9%;
+  height: 11.0%;
   border-radius: 999px;
   background: rgba(0,255,0,0.3);
 }
 
-/* CONFIRMAR: posicionado pelo centro */
+/* TELA 2: confirmar (bola direita) */
 .confirm{
-  left: 77%;
-  top: 57%;
-  width: 26%;
-  aspect-ratio: 1 / 1;
-  transform: translate(-50%, -50%);
+  left: 48.1%;
+  top: 66.0%;
+  width: 45.5%;
+  height: 11.0%;
   border-radius: 999px;
   background: rgba(0,255,0,0.3);
 }
