@@ -62,32 +62,29 @@ body { margin: 0; background: #000; }
   border-radius: 30px;
 }
 
-/* TELA 2: play (círculo grande) */
+/* Play (tela 1) */
 .play{
-  left: 38.4%;
-  top: 52.0%;
-  width: 32.0%;
-  height: 9.0%;
+  left: 38%;
+  top: 70%;
+  width: 24%;
+  height: 12%;
   border-radius: 999px;
-  background: rgba(0,255,0,0.3);
 }
 
-/* TELA 2: local (bola esquerda) */
+/* Local (tela 2) */
 .local{
-  left: 6.1%;
-  top: 66.0%;
-  width: 41.9%;
-  height: 11.0%;
+  left: 18%;
+  top: 78%;
+  width: 24%;
+  height: 12%;
   border-radius: 999px;
-  background: rgba(0,255,0,0.3);
 }
 
-/* TELA 2: confirmar (bola direita) */
+/* Confirmar (tela 2) */
 .confirm{
-  left: 48.1%;
-  top: 66.0%;
-  width: 45.5%;
-  height: 11.0%;
+  left: 58%;
+  top: 78%;
+  width: 24%;
+  height: 12%;
   border-radius: 999px;
-  background: rgba(0,255,0,0.3);
 }
