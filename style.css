@@ -64,10 +64,10 @@ body { margin: 0; background: #000; }
 
 /* TELA 2: play (círculo grande) */
 .play{
-  left: 35%;
-  top: 41.5%;
-  width: 30%;
-  height: 8.5%;
+  left: 40%;
+  top: 44.5%;
+  width: 22%;
+  height: 7.5%;
   border-radius: 999px;
   background: rgba(0,255,0,0.3);
 }
